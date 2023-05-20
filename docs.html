@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Documentation: SM FastEdit 2</title>
+		<meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>
+	<head>
+	<body>
+        <center>
+            <div class="navbar">
+                <img src="txteditor.png" class="icon">
+                <a onclick="move()" href="#">Home</a>
+                <a onclick="move()" href="docs.html" class="active">Documentation</a>
+                <a onclick="move()" href="download.html">Download</a>
+                <a onclick="move()" href="www.github.com">Github</a>
+            </div>
+        </center>
+        <div id="progressBar">
+            <div id="progress_"></div>
+        </div>
+        <div class="main">
+            <h1 id="main">Documentation</h1>
+            <span class="title"> (As of version 2.0.0)</span><hr>
+            <p>This is documentation page for SM FastEdit 2. Here you can learn how to use SM FastEdit 2.</p>
+            <div class="note">Note: Shortcuts given in the documentation are default shortcuts, so if you changed them, shortcuts given here will not change!</div><br>
+            <center><img src="screenshotCSS.png" class="img1"></center>
+            <h2>About FastEdit 2</h2><hr>
+            <p>SM FastEdit 2 is a open-source code editor created by Shaurya Mishra.</p>
+            <ul>
+                <li><b>App Version: </b>2.0.0</li>
+                <li><b>App Type: </b>Code editor</li>
+                <li><b>Written In: </b>Python and CSS</li>
+                <li><b>Based on: </b>PyQt5 and QsciScintilla</li>
+                <li><b>Icon Provider: </b><a href="https://icons8.com/">https://icons8.com/</a></li>
+            </ul>
+            <h2>How to open, save and close file?</h2><hr>
+            <p>FastEdit uses a simple file dialog for opening files and saving files as.</p>
+            <h3>Methods to open a file are:</h3>
+            <ul>
+                <li><b>Method 1: </b>Simply press <code>Ctrl+O</code> or click on Open File in the file menu.</li><br>
+                <li><b>Method 2: </b>In <a href="#">shell</a>, type command <code>file.load:</code> or <code>fe.openFile()</code> and enter.</li><br>
+            </ul> 
+            <h3>Methods to save file as are:</h3>
+            <ul>
+                <li><b>Method 1: </b>Simply press <code>Ctrl+Shift+S</code> or click on Save File As in the file menu.</li><br>
+                <li><b>Method 2: </b>In <a href="#">shell</a>, type command <code>file.saveAs:</code> or <code>fe.currentFile.saveAs()</code> and enter.</li><br>
+            </ul> 
+            <h3>Method to close file is:</h3>
+            <ul>
+                <li><b>Method 1: </b>Its simple, click on close button in tab buton.</li><br>
+            </ul> 
+            <h2>How to open and close current folder?</h2><hr>
+            <p>FastEdit uses a simple folder dialog for opening folders. Once opened a folder it will be displayed in <a href="#explorer">File Explorer</a> in a tree format.</p>
+            <h3>Methods to open a folder are:</h3>
+            <ul>
+                <li><b>Method 1: </b>Simply press <code>Ctrl+Shift+O</code> or click on Open Folder in the file menu.</li><br>
+                <li><b>Method 2: </b>In <a href="#">shell</a>, type command <code>folder.load:</code> or <code>fe.openDirectory()</code> and enter.</li><br>
+            </ul> 
+            <h3>Method to close current folder is:</h3>
+            <ul>
+                <li><b>Method 1: </b>Simply click on Close Folder in the file menu.</li><br>
+            </ul> 
+            <h2>How to close application?</h2><hr>
+            <ul>
+                <li><b>Method 1: </b>If you want to close current window click on Close Window in the file menu or press <code>Alt+F4</code> or type in shell <code>fe.close()</code>.</li><br>
+                <li><b>Method 2: </b>Else if you want to close app completely click on Leave in the file menu.</li><br>
+            </ul> 
+            <h2 id="explorer">Explorer</h2><hr>
+            <center><img src="explorer.png" class="img1"></center>
+            <p>Explorer is a builtin file explorer for FastEdit. In explorer you can easily open and navigate to your files and folders.</p>
+            <p>In explorer there are custom icons for different files. You can change them in icon manager settings. </p>
+            <p>See this list to know which icon is for which type of file:</p>
+            <ul>
+                <li><img src="Icons/iconHTML.png" class="file_icon">: For html files</li><br>
+                <li><img src="Icons/iconCSS.png" class="file_icon">: For CSS files</li><br>
+                <li><img src="Icons/iconPy.png" class="file_icon">: For Python files</li><br>
+                <li><img src="Icons/iconJS.png" class="file_icon">: For JavaScript files</li><br>
+                <li><img src="Icons/iconXML.png" class="file_icon">: For XML files</li><br>
+                <li><img src="Icons/iconJSON.png" class="file_icon">: For JSON files</li><br>
+				<li><img src="Icons/iconImage.png" class="file_icon">: For image files</li><br>
+                <li><img src="Icons/iconText.png" class="file_icon">: For not-supported and text files</li><br>
+            </ul>
+        </div>
+	</body>
+    <script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("progress_");
+    var width = 1;
+    var before_load_time = new Date().getTime();
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+    </script>
+</html>
